@@ -9,7 +9,7 @@
 
     Import-Module oh-my-posh
 
-    Set-PoshPrompt -Theme tonybaloney
+    Set-PoshPrompt -Theme zash
 
 - install github cli
 
