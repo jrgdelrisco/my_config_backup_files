@@ -12,7 +12,7 @@ function GotoMyDesktop {
 
 New-Alias projectsdir GotoMyGitProjectsDir
 
-Set-PoshPrompt -Theme tonybaloney
+Set-PoshPrompt -Theme zash
 
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
@@ -24,6 +24,14 @@ Set-PSReadLineKeyHandler -Key Ctrl+Shift+b `
                          -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
     [Microsoft.PowerShell.PSConsoleReadLine]::Insert("dotnet build")
+    [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
+
+Set-PSReadLineKeyHandler -Key Ctrl+Shift+r `
+                         -LongDescription "dotnet run the current directory" `
+                         -ScriptBlock {
+    [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+    [Microsoft.PowerShell.PSConsoleReadLine]::Insert("dotnet run")
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 
